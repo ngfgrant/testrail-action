@@ -1,0 +1,40 @@
+name: 'TestRail CLI'
+description: ''
+inputs:
+  instance:
+    description: ''
+    required: true
+    default: ''
+  project:
+    description: ''
+    required: true
+    default: ''
+  title:
+    description: ''
+    required: true
+    default: ''
+  username:
+    description: ''
+    required: true
+    default: ''
+  password:
+    description: ''
+    required: true
+    default: ''
+  report_path:  # id of input
+    description: ''
+    required: true
+    default: ''
+outputs:
+  out: # id of output
+    description: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.instance }}
+    - ${{ inputs.project }}
+    - ${{ inputs.title }}
+    - ${{ inputs.username }}
+    - ${{ inputs.password }}
+    - ${{ inputs.report_path }}
